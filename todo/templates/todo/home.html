@@ -5,13 +5,13 @@
 {% block content %}
 
 <div>
-    <div class="container pt-2">
-        <div class="row p-0">
-            <div class="col-lg-6  p-0  mb-4">
+    <div class="container pt-2 ">
+        <div class="row p-0 ">
+            <div class="col-lg-6  p-0  mb-4 ">
                 <div class="alert alert-warning text-center">
                     <h2>Add Todo</h2>
                 </div>
-                <div class="px-4 bg-light py-4">
+                <div class="p-4 bg-light">
                     <form action="/add/" method="POST">
                         {% csrf_token%} {{form | crispy}}
                         <hr>
