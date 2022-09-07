@@ -3,9 +3,12 @@ from django.http import HttpResponse
 from .models import Todo
 from .forms import TodoForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def home(request):
-    todos = Todo.objects.all()
+    todos = []
+    if request.user.is_authenticated:
+        todos= Todo.objects.filter(user=request.user)
     form = TodoForm()
     
     context = {

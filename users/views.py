@@ -41,4 +41,10 @@ def register(request):
     return render(request,'users/register.html', context)
 
 
-# def login(reques):
+def user_login(request):
+    form = AuthenticationForm(request,data=request.POST or None)
+    if form.is_valid():
+        user = form.get_user()
+        login(request,user)
+        return redirect('home')
+    return render(request, 'users/login.html',{'form':form})
