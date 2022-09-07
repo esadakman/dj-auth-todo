@@ -17,14 +17,16 @@ def home(request):
     }
     return render(request, "todo/home.html", context)
 
-
+@login_required(login_url='user_login')
 def todo_create(request):
     form = TodoForm()
     
     if request.method == "POST":
         form = TodoForm(request.POST)
         if form.is_valid():
-            form.save()
+            todo = form.save(commit=False)
+            todo.user= request.user
+            todo.save()
             messages.success(request,"Todo created successfully")
             return redirect("home")
     
@@ -33,7 +35,7 @@ def todo_create(request):
     }
     return render(request, "todo/todo_add.html", context)
 
-
+@login_required(login_url='user_login')
 def todo_update(request, id):
     todo = Todo.objects.get(id=id)
     form = TodoForm(instance=todo)
@@ -50,7 +52,7 @@ def todo_update(request, id):
     }
     return render(request, "todo/todo_update.html", context)
 
-
+@login_required(login_url='user_login')
 def todo_delete(request, id):
     todo = Todo.objects.get(id=id)
     
