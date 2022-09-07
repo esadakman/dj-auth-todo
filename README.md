@@ -5,11 +5,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://esadakman-django-auth-todo.herokuapp.com/">
       Demo
     </a>
      | 
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/esadakman/dj-auth-todo">
       Project
     </a>
  
@@ -41,6 +41,7 @@
 - CSS
 - JS
 - Django
+- Bootstrap
 
 ## How To Use
 
@@ -49,7 +50,7 @@
 To clone and run this application, you'll need [Git](https://git-scm.com) 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/esadakman/dj-auth-todo.git
 
 # Install dependencies
     $ python -m venv env
@@ -64,12 +65,10 @@ $ git clone https://github.com/your-user-name/your-project-name
 ```
 
 ## Acknowledgements
-- Information for your projects
+- Todo projects with authentication system
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-
-- Linkedin [@your-linkedin](https://{linkedin.com/your-username})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Website [@esadakman](https://esadakman.github.io/)
+- GitHub [@esadakman](https://github.com/esadakman)
+- Linkedin [@esadakman](https://www.linkedin.com/in/esadakman/)
