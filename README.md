@@ -31,7 +31,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![auth-todo](https://user-images.githubusercontent.com/98649983/188870137-dddee24f-29c0-4a60-b7d1-55321cc4d963.gif)
 
 ### Built With
 
@@ -65,7 +65,10 @@ $ git clone https://github.com/esadakman/dj-auth-todo.git
 ```
 
 ## Acknowledgements
-- Todo projects with authentication system
+- This is a simple Todo application built with Django.
+- Apart from my previous todo app, you need to login to add todo in this project.
+- With this project i understand how to use Django to create forms and authenticate users.
+
 
 ## Contact
 
