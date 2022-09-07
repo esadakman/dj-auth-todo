@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %} 
 <form action="" method="POST" class="d-flex justify-content-center ">
-
+  {% csrf_token %} 
     <section class="vh-100" >
         <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">

@@ -2,9 +2,9 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <form method="post" class="row d-flex justify-content-center">
-{% csrf_token %} 
     
     <div class="col-sm-4 col-xl-4 border border-dark rounded my-5 bg-light">
+        {% csrf_token %} 
         <div class="row card-header bg-dark text-bg-dark d-flex justify-content-center">
             <h1 class="text-center text-light py-2">Login</h1>
         </div> 
