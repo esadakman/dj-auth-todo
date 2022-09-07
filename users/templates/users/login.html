@@ -5,4 +5,17 @@
 {{ form.as_p }}
 <input type="submit" value="Login">
 </form>
-{% endblock %}
+{% endblock %} 
+{% comment %} <div class="  w-30">
+    {% csrf_token %}
+    
+    {% if form.errors %}
+        <p>There is something wrong what you entered!</p>
+    {% endif %}
+    {{ form_user | crispy }}
+    {{form_profile | crispy}}
+    {# as_p orders the scene #}
+    <input type="submit" value="Register">
+</div> {% endcomment %}
+
+ 
