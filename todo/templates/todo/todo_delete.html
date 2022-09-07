@@ -1,5 +1,6 @@
 {% extends 'todo/base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -7,8 +8,8 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    Are you sure for delete {{todo}} !
-    <input type="submit" value="delete">
+    Are you sure for delete {{todo }} !
+    <input type="submit" class="btn btn-success" value="delete">
 </form>
     
 {% endblock content %}

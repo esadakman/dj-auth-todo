@@ -1,30 +1,32 @@
 {% extends 'todo/base.html' %} 
+{% load crispy_forms_tags %}
 
 
 {% block content %}
 
 <div>
-    <div class="container pt-4">
-        <div class="row mt-2 p-0">
-            <div class="col-lg-4 mx-auto p-0 shadow">
+    <div class="container pt-2">
+        <div class="row p-0">
+            <div class="col-lg-6  p-0 shadow mb-4">
                 <div class="alert alert-warning text-center">
-                    <h2>Add ToDo</h2>
+                    <h2>Add Todo</h2>
                 </div>
-                <div class="p-4">
+                <div class="px-4">
                     <form action="/add/" method="POST">
-                        {% csrf_token%} {{form.as_p}}
+                        {% csrf_token%} {{form | crispy}}
                         <hr>
+                        <div class=" d-flex align-items-center mt-3 justify-content-center pb-2">
                         <input type="submit" value="ADD" class="btn btn-success">
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-lg-6">
                 <div class="border">
                     {% if todos|length == 0 %}
-                    <div class="p-4">
-                        <br>
-                        <br>
+                    <div class="py-2 ms-2">
+                        <br> 
                         <div class="alert alert-danger text-center">
                             <p class="" style="font-size: 30px;">ToDo Lists</p>
                         </div>
@@ -46,24 +48,27 @@
                             </thead>
                             <tbody>
                                 {% for todo in todos%}
-                                <tr>
-                                    <td>{{forloop.counter}}</td>
-                                    <td>{{todo.title}}</td>
+                                <tr >
+                                    <td >{{forloop.counter}}</td>
+                                    <td >{{todo.title}}</td>
                                     {% if todo.status == 'C'%}
-                                    <td>
+
+                                    <td class=" d-flex justify-content-center" >
                                         ✅
                                     </td>
                                     {% elif todo.status == 'I'%}
-                                    <td>
+
+                                    <td class=" d-flex justify-content-center" >
                                         🚧
                                     </td>
                                     {% elif todo.status == 'P'%}
-                                    <td>
+
+                                    <td class=" d-flex justify-content-center" >
                                         💤
                                     </td>
                                     {%endif%}
 
-                                    <td>
+                                    <td  >
                                         {% if todo.priority == '1'%}
                                             1️⃣
                                         {%elif todo.priority == '2'%}
@@ -77,10 +82,10 @@
                                         {%endif%}
                                     </td>
 
-                                    <td>
+                                    <td >
                                         <a href="delete/{{todo.id}}" title="Delete" class="">🗑️</a> 
                                     </td>
-                                    <td>
+                                    <td class=" d-flex justify-content-center">
                                             <a href="/update/{{todo.id}}"  class="">⚙️</a> 
 
                                     </td>

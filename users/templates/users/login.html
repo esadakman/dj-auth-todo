@@ -1,21 +1,31 @@
 {% extends "todo/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Login">
+<form method="post" class="row d-flex justify-content-center">
+{% csrf_token %} 
+    
+    <div class="col-sm-4 col-xl-4 border border-dark rounded my-5 bg-light">
+        <div class="row card-header bg-dark text-bg-dark d-flex justify-content-center">
+            <h1 class="text-center text-light py-2">Login</h1>
+        </div> 
+        <div class="form-outline mb-4">
+            {{ form.username | as_crispy_field }} 
+        </div>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            {{ form.password | as_crispy_field }} 
+        </div>
+        
+        <!-- Submit button -->
+        <div class=" py-1 d-flex justify-content-center"> 
+            <input type="submit" class="btn btn-primary btn-block mb-4 px-4" value="Login">
+         </div>  
+
+    </div>
+  
+     
+   
 </form>
 {% endblock %} 
-{% comment %} <div class="  w-30">
-    {% csrf_token %}
-    
-    {% if form.errors %}
-        <p>There is something wrong what you entered!</p>
-    {% endif %}
-    {{ form_user | crispy }}
-    {{form_profile | crispy}}
-    {# as_p orders the scene #}
-    <input type="submit" value="Register">
-</div> {% endcomment %}
-
+ 
  
